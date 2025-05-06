@@ -1,0 +1,12 @@
+@import url("../flavors/mocha.css");
+
+* {
+    font-family: "RobotoMono Nerd Font";
+    font-size: 13px;
+    min-height: 20px;
+}
+
+window#waybar {
+    background-color: @base;
+    color: @text;
+}
