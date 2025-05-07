@@ -31,8 +31,13 @@
               inputs.nixcord.homeModules.nixcord
             ];
             users.yuria.imports = [
-              ./modules/services/hyprpaper.nix
+              ./modules/programs/codium.nix
+              ./modules/programs/hyprland.nix
+              ./modules/programs/nixcord.nix
+              ./modules/programs/waybar.nix
+
               ./hosts/home.nix
+              ./modules/services/hyprpaper.nix
               catppuccin.homeModules.catppuccin
             ];
             useUserPackages = true;

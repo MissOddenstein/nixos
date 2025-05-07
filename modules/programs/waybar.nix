@@ -1,0 +1,47 @@
+{
+  inputs,
+  programs,
+  config,
+  ...
+}:
+
+{
+  programs.waybar = {
+    enable = true;
+    style = builtins.readFile ./waybar.css;
+    settings = {
+      mainBar = {
+        position = "top";
+        width = 1920;
+
+        modules-left = ["custom/nix" "temperature" "cpu" "memory" "hyprland/workspaces"];
+        modules-center = ["hyprland/window"];
+        modules-right = ["tray"];
+
+        "custom/nix" = {
+          format = "󱄅  NixOS";
+          on-click = "fuzzel || killall fuzzel";
+        };
+        "temperature" = {
+          hwmon-path = "/sys/class/hwmon/hwmon1/temp1_input";
+          format = "  {temperatureC} °C";
+        };
+        "cpu" = {
+          format = "   {usage}%";
+        };
+        "memory" = {
+          format = "   {}%";
+        };
+        "hyprland/workspaces" = {
+          all-outputs = true;
+          format = "{icon}";
+          format-icons = {
+            active = " ";
+            visible = " ";
+            default = " ";
+          };
+        };
+      };
+    };
+  };
+}
