@@ -25,6 +25,7 @@
       userSettings = {
         catppuccin.accentColor = "mauve";
         workbench.colorTheme = "Catppuccin Mocha";
+        editor.fontFamily = "RobotoMono Nerd Font";
         git.enableSmartCommit = true;
       };
       extensions = with pkgs.vscode-extensions; [
@@ -113,7 +114,7 @@
         "$mod, E, exec, dolphin"
         "$mod, W, exec, firefox"
         "$mod, C, exec, codium"
-        "$mod, T, exec, kitty"
+        "$mod, T, exec, kitty -e fish"
       ];
 
       bindm = [
@@ -125,11 +126,12 @@
   };
 
   programs.waybar = {
+    style = builtins.readFile ../modules/waybar.css;
     settings = {
       mainBar = {
         layer = "top";
         position = "top";
-        height = 30;
+        height = 40;
         width = 1920;
 
         modules-left = ["custom/nix" "hyprland/workspaces"];
@@ -140,8 +142,6 @@
           format = "󱄅";
           on-click = "fuzzel || killall fuzzel";
         };
-
-        style = "/home/yuria/nixos/modules/waybar.css";
       };
     };
   };

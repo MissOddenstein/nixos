@@ -14,12 +14,19 @@
   networking.hostName = "vanth";
   time.timeZone = "Australia/Perth";
 
-  users.users.yuria = {
-    isNormalUser = true;
-    extraGroups = ["sudo" "networkmanager" "wheel"];
+  users = {
+    defaultUserShell = pkgs.fish;
+    users.yuria = {
+      isNormalUser = true;
+      extraGroups = ["sudo" "networkmanager" "wheel"];
+    };
   };
 
   # packages and programs
+
+  fonts.packages = with pkgs; [
+    nerdfonts
+  ];
 
   environment.systemPackages = with pkgs; [
     pkgsUnstable.bolt-launcher
@@ -44,8 +51,8 @@
   };
 
   programs = {
-    hyprland.enable = true;
     fish.enable = true;
+    hyprland.enable = true;
   };
 
   # Audio & Display manager
