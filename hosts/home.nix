@@ -5,10 +5,9 @@
   services,
   programs,
   ...
-}: {
-  imports = [
+}:
 
-  ];
+{
   home = {
     username = "yuria";
     homeDirectory = "/home/yuria";
@@ -24,6 +23,11 @@
   };
 
   programs = {
+    git = {
+      enable = true;
+      userName = "MissOddenstein";
+      userEmail = "yuria@londor.dev";
+    };
     btop.enable = true;
     fuzzel.enable = true;
     kitty.enable = true;
