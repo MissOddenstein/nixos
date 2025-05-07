@@ -22,13 +22,17 @@
     vscode = {
       enable = true;
       package = pkgs.vscodium;
+      userSettings = {
+        catppuccin.accentColor = "mauve";
+        workbench.colorTheme = "Catppuccin Mocha";
+        git.enableSmartCommit = true;
+      };
       extensions = with pkgs.vscode-extensions; [
         catppuccin.catppuccin-vsc
         catppuccin.catppuccin-vsc-icons
 
         jnoortheen.nix-ide
         jeff-hykin.better-nix-syntax
-        kamadorueda.alejandra
       ];
     };
     nixcord = {
