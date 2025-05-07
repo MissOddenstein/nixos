@@ -16,7 +16,7 @@
 
         modules-left = ["custom/nix" "temperature" "cpu" "memory" "hyprland/workspaces"];
         modules-center = ["hyprland/window"];
-        modules-right = ["tray"];
+        modules-right = ["tray" "pulseaudio" "clock" "clock#calendar" "custom/power"];
 
         "custom/nix" = {
           format = "󱄅  NixOS";
@@ -40,6 +40,26 @@
             visible = " ";
             default = " ";
           };
+        };
+        "pulseaudio" = {
+          scroll-step = 5;
+          format = "{volume}% {icon}";
+          format-muted = "{volume}%  ";
+          format-icons = {
+            default = ["" "" ""];
+          };
+        };
+        "clock" = {
+          format = "{:%I:%M %p  }";
+          timezone = "Australia/Perth";
+        };
+        "clock#calender" = {
+          format = "{:%D  }";
+          timezone = "Australia/Perth";
+        };
+        "custom/power" = {
+          format = "Power ";
+          on-click = "reboot";
         };
       };
     };

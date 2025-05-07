@@ -13,7 +13,12 @@ window#waybar {
 #temperature,
 #cpu,
 #memory,
-#workspaces {
+#workspaces,
+#tray,
+#pulseaudio,
+#clock,
+#clock-calender,
+#custom-power {
     font-family: "RobotoMono, Nerd Fonts";
     padding: 0px;
     font-size: 13px;
@@ -50,4 +55,22 @@ window#waybar {
 }
 #workspaces button:hover {
     background-color: transparent;
+}
+#tray {
+    background-color: #313244;
+    margin: 5px 20px;
+    padding: 0px 10px;
+}
+#pulseaudio {
+    background-color: #fab387;
+}
+#clock {
+    background-color: #f9e2af;
+}
+#clock-calender {
+    background-color: #eba0ac;
+}
+#custom-power {
+    margin-right: 15px;
+    background-color: #f38ba8;
 }
