@@ -25,15 +25,19 @@
       };
 
       "$mod" = "SUPER";
+      "$modShift" = "SUPERSHIFT";
 
       bind = [
         # system binds
         "$mod, space, exec, fuzzel || killall fuzzel"
         "$mod, Q, killactive"
-        "$mod, F, fullscreen, 0"
+        "$mod, F, fullscreen, 1"
+        "$modShift, F, fullscreen, 0"
         "$mod, P, exec, hyprshot -m region"
+        "$modShift, P, exec, hyprshot -m active -m output"
 
         # program binds
+        "$mod, D, exec, vesktop"
         "$mod, E, exec, dolphin"
         "$mod, W, exec, firefox"
         "$mod, C, exec, codium"

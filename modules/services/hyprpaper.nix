@@ -9,8 +9,8 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = "./yohoho.jpg";
-      wallpaper = ", ./yohoho.jpg";
+      preload = "/home/yuria/nixos/modules/services/yohoho.jpg";
+      wallpaper = ", /home/yuria/nixos/modules/services/yohoho.jpg";
     };
   };
 }
