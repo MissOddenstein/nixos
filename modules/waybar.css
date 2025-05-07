@@ -1,10 +1,11 @@
 * {
-    font-family: "RobotoMono Nerd Font";
-    font-size: 13px;
+    font-family: "RobotoMono, Nerd Fonts";
     min-height: 20px;
 }
 
 window#waybar {
-    background-color: black;
-    color: white;
+    box-shadow: 10px #11111b inset;
+    border-bottom-color: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
 }

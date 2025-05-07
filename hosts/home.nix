@@ -10,6 +10,7 @@
     username = "yuria";
     homeDirectory = "/home/yuria";
     packages = with pkgs; [
+      nerdfonts
       fastfetch
       gzip
       unzip
