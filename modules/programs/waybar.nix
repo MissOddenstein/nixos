@@ -20,6 +20,7 @@
 
         "custom/nix" = {
           format = "󱄅  NixOS";
+          tooltip-format = "NixOS Menu";
           on-click = "fuzzel || killall fuzzel";
         };
         "temperature" = {
@@ -58,9 +59,24 @@
         "clock#calendar" = {
           format = "{:%B %d   }";
           timezone = "Australia/Perth";
+          tooltip-format = "<tt><small>{calendar}</small></tt>";
+          calendar = {
+            mode = "year";
+            mode-mon-col = 3;
+            weeks-pos = "right";
+            on-scroll = 1;
+            format = {
+              months = "<span color='#f2cdcd'><b>{}</b></span>";
+              days = "<span color='#f5e0dc'><b>{}</b></span>";
+              weeks = "<span color='#fab387'><b>W{}</b></span>";
+              weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+              today = "<span color='#cba6f7'><b><u>{}</u></b></span>";
+            };
+          };
         };
         "custom/power" = {
           format = "I/O  ";
+          tooltip-format = "Power Menu";
           on-click = "reboot";
         };
       };
