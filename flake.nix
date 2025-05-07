@@ -11,7 +11,13 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, catppuccin, ...  }: {
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    home-manager,
+    catppuccin,
+    ...
+  }: {
     nixosConfigurations.vanth = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       system = "x86_64-linux";

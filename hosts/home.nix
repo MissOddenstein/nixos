@@ -1,7 +1,11 @@
-{ inputs, config, pkgs, services, programs, ... }:
-
 {
-
+  inputs,
+  config,
+  pkgs,
+  services,
+  programs,
+  ...
+}: {
   home = {
     username = "yuria";
     homeDirectory = "/home/yuria";
@@ -78,7 +82,6 @@
     xwayland.enable = true;
     enable = true;
     settings = {
-
       exec-once = "waybar & hyprpaper";
 
       general = {
@@ -107,11 +110,9 @@
         "$mod, W, exec, firefox"
         "$mod, C, exec, codium"
         "$mod, T, exec, kitty"
-
       ];
 
       bindm = [
-
         # mouse binds
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
@@ -127,16 +128,16 @@
         height = 30;
         width = 1920;
 
-        modules-left = [ "custom/nix" "hyprland/workspaces" ];
-        modules-center = [ "hyprland/window" ];
-        modules-right = [ "tray" ];
+        modules-left = ["custom/nix" "hyprland/workspaces"];
+        modules-center = ["hyprland/window"];
+        modules-right = ["tray"];
 
         "custom/nix" = {
           format = "󱄅";
           on-click = "fuzzel || killall fuzzel";
         };
 
-    style = "/home/yuria/nixos/modules/waybar.css";
+        style = "/home/yuria/nixos/modules/waybar.css";
       };
     };
   };

@@ -1,19 +1,23 @@
-{ config, lib, pkgs, inputs, pkgsUnstable, ... }:
-
 {
-  imports = [ ./hardware-config.nix];
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  config,
+  lib,
+  pkgs,
+  inputs,
+  pkgsUnstable,
+  ...
+}: {
+  imports = [./hardware-config.nix];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
-
   # User/Host profile
-    networking.hostName = "vanth";
-    time.timeZone = "Australia/Perth";
+  networking.hostName = "vanth";
+  time.timeZone = "Australia/Perth";
 
   users.users.yuria = {
     isNormalUser = true;
-    extraGroups = [ "sudo" "networkmanager" "wheel" ];
-    };
+    extraGroups = ["sudo" "networkmanager" "wheel"];
+  };
 
   # packages and programs
 
