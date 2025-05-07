@@ -4,6 +4,7 @@
   config,
   ...
 }:
+
 {
   nixcord = {
     enable = true;

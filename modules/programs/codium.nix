@@ -1,6 +1,7 @@
 {
   inputs,
   programs,
+  pkgs,
   config,
   ...
 }:
