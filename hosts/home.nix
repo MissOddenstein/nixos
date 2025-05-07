@@ -134,8 +134,8 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = "../yohoho.jpg";
-      wallpaper = ", ../yohoho.jpg";
+      preload = "../modules/yohoho.jpg";
+      wallpaper = ", ../modules/yohoho.jpg";
     };
   };
 
