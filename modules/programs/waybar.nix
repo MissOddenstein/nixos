@@ -43,22 +43,22 @@
         };
         "pulseaudio" = {
           scroll-step = 5;
-          format = "{volume}% {icon}";
-          format-muted = "{volume}%  ";
+          format = "{volume}%  {icon}";
+          format-muted = "{volume}%   ";
           format-icons = {
             default = ["" "" ""];
           };
         };
         "clock" = {
-          format = "{:%I:%M %p  }";
+          format = "{:%I:%M  } ";
           timezone = "Australia/Perth";
         };
-        "clock#calender" = {
-          format = "{:%D  }";
+        "clock#calendar" = {
+          format = "{:%B %d   }";
           timezone = "Australia/Perth";
         };
         "custom/power" = {
-          format = "Power ";
+          format = "I/O  ";
           on-click = "reboot";
         };
       };

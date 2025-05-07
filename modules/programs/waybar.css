@@ -17,7 +17,7 @@ window#waybar {
 #tray,
 #pulseaudio,
 #clock,
-#clock-calender,
+#clock.calendar,
 #custom-power {
     font-family: "RobotoMono, Nerd Fonts";
     padding: 0px;
@@ -43,7 +43,7 @@ window#waybar {
 }
 #workspaces {
     background-color: #313244;
-    margin: 5px 20px;
+    margin: 5px 15px;
     padding: 0px 10px;
 }
 #workspaces button {
@@ -58,16 +58,17 @@ window#waybar {
 }
 #tray {
     background-color: #313244;
-    margin: 5px 20px;
+    min-width: 45px;
+    margin: 5px 15;
     padding: 0px 10px;
 }
 #pulseaudio {
-    background-color: #fab387;
+    background-color: #f2cdcd;
 }
 #clock {
-    background-color: #f9e2af;
+    background-color: #f5c2e7;
 }
-#clock-calender {
+#clock.calendar {
     background-color: #eba0ac;
 }
 #custom-power {
