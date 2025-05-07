@@ -27,6 +27,7 @@
         catppuccin.accentColor = "mauve";
         workbench.colorTheme = "Catppuccin Mocha";
         editor.fontFamily = "RobotoMono Nerd Font";
+        files.exclude = "";
         git.enableSmartCommit = true;
       };
       extensions = with pkgs.vscode-extensions; [
