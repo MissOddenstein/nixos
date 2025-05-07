@@ -43,13 +43,15 @@
 
   # Audio & Display manager
   services = {
-    displayManager ={
-      sddm.settings = {
-        defaultSession = "hyprland";
-        General.DisplayServer = "wayland-user";
-        Autologin = {
-          User = "yuria";
-        };
+    displayManager = {
+      autoLogin = {
+        enable = true;
+        user = "yuria";
+      };
+      defaultSession = "hyprland";
+      sddm = {
+        enable = true;
+        wayland.enable = true;
       };
     };
     pipewire = {
