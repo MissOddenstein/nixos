@@ -1,3 +1,8 @@
+* { 
+    padding: 0;
+    margin: 0;
+}
+
 window#waybar {
     margin: 20px 20px;
     background-color: #1e1e2e;
@@ -10,8 +15,8 @@ window#waybar {
 #memory,
 #workspaces {
     font-family: "RobotoMono, Nerd Fonts";
-    font-size: 15px;
     padding: 0px;
+    font-size: 13px;
     margin: 5px 5px;
     min-width: 90px;
     border-radius: 10px;
@@ -38,7 +43,7 @@ window#waybar {
 }
 #workspaces button {
     font-family: "RobotoMono, Nerd Fonts";
-    font-size: 1px;
+    font-size: 13px;
     color: #94e2d5;
     background-color: transparent;
     padding-left: 10px

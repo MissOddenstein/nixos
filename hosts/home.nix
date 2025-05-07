@@ -138,9 +138,7 @@
     style = builtins.readFile ../modules/waybar.css;
     settings = {
       mainBar = {
-        layer = "top";
         position = "top";
-        height = 20;
         width = 1920;
 
         modules-left = ["custom/nix" "temperature" "cpu" "memory" "hyprland/workspaces"];
