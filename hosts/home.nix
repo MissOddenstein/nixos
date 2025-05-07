@@ -10,6 +10,7 @@
     username = "yuria";
     homeDirectory = "/home/yuria";
     packages = with pkgs; [
+      hyprshot
       nerdfonts
       fastfetch
       gzip
@@ -111,6 +112,7 @@
         "$mod, space, exec, fuzzel || killall fuzzel"
         "$mod, Q, killactive"
         "$mod, F, fullscreen, 0"
+        "$mod, P, exec, hyprshot -m region"
 
         # program binds
         "$mod, E, exec, dolphin"
@@ -124,6 +126,11 @@
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
       ];
+      bindl = [
+        # system audio
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ];
     };
   };
 
@@ -133,16 +140,35 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 40;
+        height = 20;
         width = 1920;
 
-        modules-left = ["custom/nix" "hyprland/workspaces"];
+        modules-left = ["custom/nix" "temperature" "cpu" "memory" "hyprland/workspaces"];
         modules-center = ["hyprland/window"];
         modules-right = ["tray"];
 
         "custom/nix" = {
-          format = "󱄅";
+          format = "󱄅  NixOS";
           on-click = "fuzzel || killall fuzzel";
+        };
+        "temperature" = {
+          hwmon-path = "/sys/class/hwmon/hwmon1/temp1_input";
+          format = "  {temperatureC} °C";
+        };
+        "cpu" = {
+          format = "   {usage}%";
+        };
+        "memory" = {
+          format = "   {}%";
+        };
+        "hyprland/workspaces" = {
+          all-outputs = true;
+          format = "{icon}";
+          format-icons = {
+            active = " ";
+            visible = " ";
+            default = " ";
+          };
         };
       };
     };

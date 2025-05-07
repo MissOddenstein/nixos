@@ -1,11 +1,48 @@
-* {
-    font-family: "RobotoMono, Nerd Fonts";
-    min-height: 20px;
-}
-
 window#waybar {
-    box-shadow: 10px #11111b inset;
-    border-bottom-color: #11111b;
+    margin: 20px 20px;
     background-color: #1e1e2e;
     color: #cdd6f4;
+}
+
+#custom-nix,
+#temperature,
+#cpu,
+#memory,
+#workspaces {
+    font-family: "RobotoMono, Nerd Fonts";
+    font-size: 15px;
+    padding: 0px;
+    margin: 5px 5px;
+    min-width: 90px;
+    border-radius: 10px;
+    color:#1e1e2e;
+}
+
+#custom-nix {
+    margin-left: 15px;
+    background-color: #ca9ee6;
+}
+#temperature {
+    background-color: #babbf1;
+}
+#cpu {
+    background-color: #8caaee;
+}
+#memory {
+    background-color: #85c1dc;
+}
+#workspaces {
+    background-color: #313244;
+    margin: 5px 20px;
+    padding: 0px 10px;
+}
+#workspaces button {
+    font-family: "RobotoMono, Nerd Fonts";
+    font-size: 1px;
+    color: #94e2d5;
+    background-color: transparent;
+    padding-left: 10px
+}
+#workspaces button:hover {
+    background-color: transparent;
 }
