@@ -52,6 +52,8 @@
         "clock" = {
           format = "{:%I:%M  } ";
           timezone = "Australia/Perth";
+          tooltip = true;
+          tooltip-format = "{:%A, %B %d, %Y}";
         };
         "clock#calendar" = {
           format = "{:%B %d   }";

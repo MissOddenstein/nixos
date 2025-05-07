@@ -19,6 +19,7 @@
       unzip
       kdePackages.dolphin
       killall
+      krita
     ];
   };
 
