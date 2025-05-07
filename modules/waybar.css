@@ -1,5 +1,3 @@
-@import url("../flavors/mocha.css");
-
 * {
     font-family: "RobotoMono Nerd Font";
     font-size: 13px;
@@ -7,6 +5,6 @@
 }
 
 window#waybar {
-    background-color: @base;
-    color: @text;
+    background-color: red;
+    color: blue;
 }

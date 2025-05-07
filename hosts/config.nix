@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, pkgsUnstable, ... }:
 
 {
   imports = [ ./hardware-config.nix];
@@ -18,10 +18,15 @@
   # packages and programs
 
   environment.systemPackages = with pkgs; [
-    bolt-launcher
+    pkgsUnstable.bolt-launcher
     git
     hyprpaper
   ];
+
+  _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
 
   # GRUB2 boot loader
   boot.loader = {

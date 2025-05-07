@@ -126,7 +126,7 @@
           on-click = "fuzzel || killall fuzzel";
         };
 
-    style = ../modules/waybar.css;
+    style = "/home/yuria/nixos/modules/waybar.css";
       };
     };
   };
@@ -139,5 +139,5 @@
     };
   };
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "24.11";
 }
