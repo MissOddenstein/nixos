@@ -31,6 +31,7 @@
               inputs.nixcord.homeModules.nixcord
             ];
             users.yuria.imports = [
+              ./modules/services/hyprpaper.nix
               ./hosts/home.nix
               catppuccin.homeModules.catppuccin
             ];

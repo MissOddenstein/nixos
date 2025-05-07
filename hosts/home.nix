@@ -176,13 +176,5 @@
     };
   };
 
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      preload = "/home/yuria/nixos/modules/yohoho.jpg";
-      wallpaper = ", /home/yuria/nixos/modules/yohoho.jpg";
-    };
-  };
-
   home.stateVersion = "24.11";
 }
