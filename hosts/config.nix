@@ -24,16 +24,17 @@
   ];
 
   # GRUB2 boot loader
-    boot.loader = {
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
-      };
-      grub = {
-        efiSupport = true;
-        device = "nodev";
-        };
-      };
+  boot.loader = {
+    grub = {
+      enable = true;
+      device = "nodev";
+      useOSProber = true;
+      efiSupport = true;
+    };
+    efi = {
+      canTouchEfiVariables = true;
+    };
+  };
 
   programs = {
     hyprland.enable = true;
@@ -48,7 +49,6 @@
         General.DisplayServer = "wayland-user";
         Autologin = {
           User = "yuria";
-          Session = "hyprland";
         };
       };
     };

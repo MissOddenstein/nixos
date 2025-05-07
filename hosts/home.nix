@@ -22,6 +22,18 @@
       discord.enable = false;
       vesktop.enable = true;
       vesktopConfig = {
+        plugins = {
+          fakeNitro.enable = true;
+          youtubeAdblock.enable = true;
+          spotifyCrack.enable = true;
+
+          readAllNotificationsButton.enable = true;
+          typingTweaks.enable = true;
+          userMessagesPronouns.enable = true;
+
+          webKeybinds.enable = true;
+          webScreenShareFixes.enable = true;
+        };
         themeLinks = [
           "https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css"
         ];
@@ -30,8 +42,13 @@
     git = {
       enable = true;
       userName = "MissOddenstein";
-      userEmail = "yuria@londor.dev"
-    }
+      userEmail = "yuria@londor.dev";
+      aliases = {
+        ci = "commit";
+        co = "checkout";
+        s = "status";
+      };
+    };
 
     waybar.enable = true;
     btop.enable = true;
@@ -54,9 +71,6 @@
 
       exec-once = "waybar & hyprpaper";
 
-      # preload = "../yohoho.jpeg";
-      # wallpaper = "../yohoho.jpeg";
-
       general = {
         "col.active_border" = "rgb(cba6f7)";
         "col.inactive_border" = "rgb(181825)";
@@ -69,12 +83,6 @@
       decoration = {
         rounding = "10";
       };
-
-      monitor = [
-        "DP-1, 1920x1080@120, 0x0, 1"
-        "DP-2, 1920x1080@120, 1920x0, 1"
-        "DP-3, 1920x1080@120, -1920x0, 1"
-      ];
 
       "$mod" = "SUPER";
 
