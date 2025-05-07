@@ -6,6 +6,9 @@
   programs,
   ...
 }: {
+  imports = [
+
+  ];
   home = {
     username = "yuria";
     homeDirectory = "/home/yuria";
@@ -25,6 +28,7 @@
       enable = true;
       package = pkgs.vscodium;
       userSettings = {
+        explorer.confirmDelete = false;
         catppuccin.accentColor = "mauve";
         workbench.colorTheme = "Catppuccin Mocha";
         editor.fontFamily = "RobotoMono Nerd Font";
