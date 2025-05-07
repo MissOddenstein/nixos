@@ -19,8 +19,6 @@
 
   environment.systemPackages = with pkgs; [
     pkgsUnstable.bolt-launcher
-    git
-    hyprpaper
   ];
 
   _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {

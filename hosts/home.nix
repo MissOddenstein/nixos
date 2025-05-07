@@ -7,16 +7,26 @@
     homeDirectory = "/home/yuria";
     packages = with pkgs; [
       fastfetch
-      kdePackages.ark
       gzip
       unzip
       kdePackages.dolphin
-      vscodium
       killall
     ];
   };
 
   programs = {
+    vscode = {
+      enable = true;
+      package = pkgs.vscodium;
+      extensions = with pkgs.vscode-extensions; [
+        catppuccin.catppuccin-vsc
+        catppuccin.catppuccin-vsc-icons
+
+        jnoortheen.nix-ide
+        jeff-hykin.better-nix-syntax
+        kamadorueda.alejandra
+      ];
+    };
     nixcord = {
       enable = true;
       discord.enable = false;
