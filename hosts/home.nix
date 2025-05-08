@@ -13,11 +13,12 @@
       gtk.enable = true;
       package = pkgs.catppuccin-cursors.mochaDark;
       name = "catppuccin-mocha-dark-cursors";
-      size = 22;
+      size = 24;
     };
     username = "yuria";
     homeDirectory = "/home/yuria";
     packages = with pkgs; [
+      xfce.thunar
       hyprshot
       nerdfonts
       fastfetch
@@ -32,7 +33,7 @@
     enable = true;
     theme = {
       package = pkgs.catppuccin-gtk;
-      name = "catppuccin-dark";
+      name = "catppuccin-mocha-mauve-standard+default";
     };
   };
 

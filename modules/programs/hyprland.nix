@@ -38,7 +38,7 @@
 
         # program binds
         "$mod, D, exec, vesktop"
-        "$mod, E, exec, dolphin"
+        "$mod, E, exec, thunar"
         "$mod, W, exec, firefox"
         "$mod, C, exec, codium"
         "$mod, T, exec, kitty -e fish"
