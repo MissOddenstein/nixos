@@ -9,6 +9,12 @@
 
 {
   home = {
+    pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.catppuccin-cursors.mochaDark;
+      name = "catppuccin-mocha-dark-cursors";
+      size = 22;
+    };
     username = "yuria";
     homeDirectory = "/home/yuria";
     packages = with pkgs; [
@@ -21,6 +27,13 @@
       killall
       krita
     ];
+  };
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.catppuccin-gtk;
+      name = "catppuccin-dark";
+    };
   };
 
   programs = {
