@@ -38,7 +38,12 @@
     };
     btop.enable = true;
     fuzzel.enable = true;
-    kitty.enable = true;
+    kitty = {
+      enable = true;
+      settings = {
+        shell = "fish";
+      };
+    };
     home-manager.enable = true;
     firefox.enable = true;
   };

@@ -50,7 +50,10 @@
   };
 
   programs = {
-    fish.enable = true;
+    fish = {
+      enable = true;
+      interactiveShellInit = "fastfetch";
+    };
     hyprland.enable = true;
   };
 
