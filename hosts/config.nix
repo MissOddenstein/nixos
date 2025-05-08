@@ -37,6 +37,11 @@
     inherit (config.nixpkgs) config;
   };
 
+  programs = {
+    fish.enable = true;
+    hyprland.enable = true;
+  };
+
   # GRUB2 boot loader
   boot.loader = {
     grub = {
@@ -48,11 +53,6 @@
     efi = {
       canTouchEfiVariables = true;
     };
-  };
-
-  programs = {
-    fish.enable = true;
-    hyprland.enable = true;
   };
 
   # Audio & Display manager
