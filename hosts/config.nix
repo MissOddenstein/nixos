@@ -5,20 +5,32 @@
   inputs,
   pkgsUnstable,
   ...
-}: {
-  imports = [./hardware-config.nix];
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+}:
+{
+  imports = [ ./hardware-config.nix ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nixpkgs.config.allowUnfree = true;
 
   # User/Host profile
   networking.hostName = "vanth";
   time.timeZone = "Australia/Perth";
+  i18n = {
+    defaultLocale = "en_AU.UTF-8";
+    extraLocaleSettings.LC_ALL = "en_AU.UTF-8";
+  };
 
   users = {
     defaultUserShell = pkgs.fish;
     users.yuria = {
       isNormalUser = true;
-      extraGroups = ["sudo" "networkmanager" "wheel"];
+      extraGroups = [
+        "sudo"
+        "networkmanager"
+        "wheel"
+      ];
     };
   };
 
@@ -28,7 +40,7 @@
     nerdfonts
   ];
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
     pkgsUnstable.bolt-launcher
   ];
 

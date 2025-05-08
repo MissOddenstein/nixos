@@ -11,41 +11,46 @@
     };
   };
 
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    home-manager,
-    catppuccin,
-    ...
-  }: {
-    nixosConfigurations.vanth = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      catppuccin,
+      ...
+    }:
+    rec {
       system = "x86_64-linux";
-      modules = [
-        ./hosts/config.nix
-        catppuccin.nixosModules.catppuccin
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            sharedModules = [
-              inputs.nixcord.homeModules.nixcord
-            ];
-            users.yuria.imports = [
-              ./modules/programs/codium.nix
-              ./modules/programs/hyprland.nix
-              ./modules/programs/nixcord.nix
-              ./modules/programs/waybar.nix
+      formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt-rfc-style;
+      nixosConfigurations.vanth = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/config.nix
+          catppuccin.nixosModules.catppuccin
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              sharedModules = [
+                inputs.nixcord.homeModules.nixcord
+              ];
+              users.yuria.imports = [
+                ./modules/programs/codium.nix
+                ./modules/programs/hyprland.nix
+                ./modules/programs/nixcord.nix
+                ./modules/programs/waybar.nix
 
-              ./hosts/home.nix
-              ./modules/services/hyprpaper.nix
-              catppuccin.homeModules.catppuccin
-            ];
-            useUserPackages = true;
-            useGlobalPkgs = true;
-            backupFileExtension = "back;";
-          };
-        }
-      ];
+                ./hosts/home.nix
+                ./modules/services/hyprpaper.nix
+                ./modules/services/gtk.nix
+                catppuccin.homeModules.catppuccin
+              ];
+              useUserPackages = true;
+              useGlobalPkgs = true;
+              backupFileExtension = "back;";
+            };
+          }
+        ];
+      };
     };
-  };
 }

@@ -1,5 +1,6 @@
-{...}: {
-  home.gtk = {
+{ pkgs, ... }:
+{
+  gtk = {
     enable = true;
     theme = {
       package = pkgs.catppuccin-gtk.override {
@@ -12,7 +13,7 @@
       package = pkgs.adwaita-icon-theme;
       name = "Adwaita";
     };
-        font = {
+    font = {
       name = "RobotoMono Nerd Fonts";
       size = 11;
     };

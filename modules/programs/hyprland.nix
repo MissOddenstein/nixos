@@ -5,7 +5,7 @@
   ...
 }:
 {
-    wayland.windowManager.hyprland = {
+  wayland.windowManager.hyprland = {
     xwayland.enable = true;
     enable = true;
     settings = {

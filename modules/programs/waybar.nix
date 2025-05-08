@@ -14,9 +14,21 @@
         position = "top";
         width = 1920;
 
-        modules-left = ["custom/nix" "temperature" "cpu" "memory" "hyprland/workspaces"];
-        modules-center = ["hyprland/window"];
-        modules-right = ["tray" "pulseaudio" "clock" "clock#calendar" "custom/power"];
+        modules-left = [
+          "custom/nix"
+          "temperature"
+          "cpu"
+          "memory"
+          "hyprland/workspaces"
+        ];
+        modules-center = [ "hyprland/window" ];
+        modules-right = [
+          "tray"
+          "pulseaudio"
+          "clock"
+          "clock#calendar"
+          "custom/power"
+        ];
 
         "custom/nix" = {
           format = "󱄅  NixOS";
@@ -47,7 +59,11 @@
           format = " {volume}%  {icon} ";
           format-muted = "{volume}%   ";
           format-icons = {
-            default = ["" "" ""];
+            default = [
+              ""
+              ""
+              ""
+            ];
           };
         };
         "clock" = {

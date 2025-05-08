@@ -26,6 +26,7 @@
       unzip
       killall
       krita
+      nh
     ];
   };
 
