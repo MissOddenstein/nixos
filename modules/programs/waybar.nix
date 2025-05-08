@@ -44,20 +44,20 @@
         };
         "pulseaudio" = {
           scroll-step = 5;
-          format = "{volume}%  {icon}";
+          format = " {volume}%  {icon} ";
           format-muted = "{volume}%   ";
           format-icons = {
             default = ["" "" ""];
           };
         };
         "clock" = {
-          format = "{:%I:%M  } ";
+          format = " {:%I:%M  } ";
           timezone = "Australia/Perth";
           tooltip = true;
           tooltip-format = "{:%A, %B %d, %Y}";
         };
         "clock#calendar" = {
-          format = "{:%B %d   }";
+          format = " {:%B %d  } ";
           timezone = "Australia/Perth";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           calendar = {
@@ -75,9 +75,10 @@
           };
         };
         "custom/power" = {
-          format = "I/O  ";
+          format = " I/O   ";
           tooltip-format = "Power Menu";
-          on-click = "reboot";
+          on-click = "shutdown";
+          on-click-right = "reboot";
         };
       };
     };
