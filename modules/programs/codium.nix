@@ -17,6 +17,7 @@
         editor.fontFamily = "RobotoMono Nerd Font";
         files.exclude = "";
         git.enableSmartCommit = true;
+        git.confirmSync = false;
       };
       extensions = with pkgs.vscode-extensions; [
         catppuccin.catppuccin-vsc
