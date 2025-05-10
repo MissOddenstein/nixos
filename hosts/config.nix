@@ -50,6 +50,7 @@
   };
 
   programs = {
+    steam.enable = true;
     fish = {
       enable = true;
       interactiveShellInit = "fastfetch";

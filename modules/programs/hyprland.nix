@@ -11,6 +11,12 @@
     settings = {
       exec-once = "waybar & hyprpaper";
 
+      monitor =  [
+        "DP-1, 1920x1080@120, auto, 1"
+        "DP-2, 1920x1080@120, auto,1 "
+        "DP-3, 1920x1080@120, auto, 1"
+      ];
+
       general = {
         "col.active_border" = "rgb(cba6f7)";
         "col.inactive_border" = "rgb(181825)";
@@ -35,6 +41,7 @@
         "$modShift, F, fullscreen, 0"
         "$mod, P, exec, hyprshot -m region"
         "$modShift, P, exec, hyprshot -m active -m output"
+        "$mod, V, togglefloating"
 
         # program binds
         "$mod, D, exec, vesktop"

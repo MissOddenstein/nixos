@@ -13,7 +13,6 @@
       vesktop.enable = true;
       vesktopConfig = {
         plugins = {
-          fakeNitro.enable = true;
           youtubeAdblock.enable = true;
           spotifyCrack.enable = true;
 
@@ -23,6 +22,7 @@
 
           webKeybinds.enable = true;
           webScreenShareFixes.enable = true;
+          ircColors.enable = true;
         };
         themeLinks = [
           "https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css"
