@@ -7,6 +7,7 @@
   ...
 }:
 {
+
   home = {
     username = "yuria";
     homeDirectory = "/home/yuria";

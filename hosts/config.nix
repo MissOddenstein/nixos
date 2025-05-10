@@ -1,9 +1,9 @@
 {
   config,
+  pkgsUnstable,
   lib,
   pkgs,
   inputs,
-  pkgsUnstable,
   ...
 }:
 {
@@ -36,18 +36,13 @@
 
   # packages and programs
 
-  fonts.packages = with pkgs; [
-    nerdfonts
+  _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
+  environment.systemPackages = [
+    pkgsUnstable.bolt-launcher
   ];
-
-  # environment.systemPackages = [
-  #   pkgsUnstable.bolt-launcher
-  # ];
-
-  # _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
-  #   inherit (pkgs.stdenv.hostPlatform) system;
-  #   inherit (config.nixpkgs) config;
-  # };
 
   programs = {
     steam.enable = true;
