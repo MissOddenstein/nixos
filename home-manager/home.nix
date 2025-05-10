@@ -15,8 +15,6 @@
       name = "catppuccin-mocha-dark-cursors";
       size = 16;
     };
-    username = "yuria";
-    homeDirectory = "/home/yuria";
     packages = with pkgs; [
       xfce.thunar
       hyprshot
@@ -38,11 +36,6 @@
   };
 
   programs = {
-    git = {
-      enable = true;
-      userName = "MissOddenstein";
-      userEmail = "yuria@londor.dev";
-    };
     btop.enable = true;
     fuzzel.enable = true;
     kitty = {

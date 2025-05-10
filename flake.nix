@@ -40,14 +40,15 @@
                 ./modules/programs/nixcord.nix
                 ./modules/programs/waybar.nix
 
-                ./hosts/home.nix
+                ./home-manager/home.nix
+                ./home-manager/yuria.nix
                 ./modules/services/hyprpaper.nix
                 ./modules/services/gtk.nix
                 catppuccin.homeModules.catppuccin
               ];
               useUserPackages = true;
               useGlobalPkgs = true;
-              backupFileExtension = "back;";
+              backupFileExtension = "back";
             };
           }
         ];
