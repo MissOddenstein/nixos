@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  pkgsUnstable,
   services,
   config,
   ...
@@ -9,6 +10,8 @@
   home = {
     username = "yuria";
     homeDirectory = "/home/yuria";
+    btop.enable = true;
+    fuzzel.enable = true;
   };
   programs = {
     git = {
@@ -16,6 +19,12 @@
       userName = "MissOddenstein";
       userEmail = "yuria@londor.dev";
     };
-    home-manager.enable = true;
   };
+  packages = [
+      krita
+      nh
+      prismlauncher
+  ];
+
+  home.stateVersion = "24.11";
 }

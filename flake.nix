@@ -33,18 +33,18 @@
             home-manager = {
               sharedModules = [
                 inputs.nixcord.homeModules.nixcord
+                catppuccin.homeModules.catppuccin
               ];
               users.yuria.imports = [
-                ./modules/programs/codium.nix
-                ./modules/programs/hyprland.nix
-                ./modules/programs/nixcord.nix
-                ./modules/programs/waybar.nix
-
                 ./home-manager/home.nix
                 ./home-manager/yuria.nix
-                ./modules/services/hyprpaper.nix
-                ./modules/services/gtk.nix
-                catppuccin.homeModules.catppuccin
+
+                    ./modules/programs/codium.nix
+                    ./modules/programs/hyprland.nix
+                    ./modules/programs/nixcord.nix
+                    ./modules/programs/waybar.nix
+                    ./modules/services/hyprpaper.nix
+                    ./modules/services/gtk.nix
               ];
               useUserPackages = true;
               useGlobalPkgs = true;

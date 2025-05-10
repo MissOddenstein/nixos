@@ -23,9 +23,6 @@
       gzip
       unzip
       killall
-      krita
-      nh
-      prismlauncher
     ];
   };
 
@@ -44,9 +41,17 @@
         shell = "fish";
       };
     };
-    home-manager.enable = true;
     firefox.enable = true;
   };
+
+  imports = [
+    ./modules/programs/codium.nix
+    ./modules/programs/hyprland.nix
+    ./modules/programs/nixcord.nix
+    ./modules/programs/waybar.nix
+    ./modules/services/hyprpaper.nix
+    ./modules/services/gtk.nix
+  ];
 
   catppuccin = {
     enable = true;
