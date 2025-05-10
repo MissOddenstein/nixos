@@ -4,7 +4,6 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixcord.url = "github:kaylorben/nixcord";
     catppuccin.url = "github:catppuccin/nix";
-
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,17 +34,12 @@
                 inputs.nixcord.homeModules.nixcord
                 catppuccin.homeModules.catppuccin
               ];
-              users.yuria.imports = [
-                ./home-manager/home.nix
-                ./home-manager/yuria.nix
-
-                    ./modules/programs/codium.nix
-                    ./modules/programs/hyprland.nix
-                    ./modules/programs/nixcord.nix
-                    ./modules/programs/waybar.nix
-                    ./modules/services/hyprpaper.nix
-                    ./modules/services/gtk.nix
-              ];
+              users.yuria = {
+                imports = [
+                  ./home-manager/home.nix
+                  ./home-manager/yuria.nix
+                ];
+              };
               useUserPackages = true;
               useGlobalPkgs = true;
               backupFileExtension = "back";

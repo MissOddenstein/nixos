@@ -40,14 +40,14 @@
     nerdfonts
   ];
 
-  environment.systemPackages = [
-    pkgsUnstable.bolt-launcher
-  ];
+  # environment.systemPackages = [
+  #   pkgsUnstable.bolt-launcher
+  # ];
 
-  _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
-    inherit (pkgs.stdenv.hostPlatform) system;
-    inherit (config.nixpkgs) config;
-  };
+  # _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
+  #   inherit (pkgs.stdenv.hostPlatform) system;
+  #   inherit (config.nixpkgs) config;
+  # };
 
   programs = {
     steam.enable = true;

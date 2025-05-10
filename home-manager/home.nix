@@ -9,12 +9,6 @@
 
 {
   home = {
-    pointerCursor = {
-      gtk.enable = true;
-      package = pkgs.catppuccin-cursors.mochaDark;
-      name = "catppuccin-mocha-dark-cursors";
-      size = 16;
-    };
     packages = with pkgs; [
       xfce.thunar
       hyprshot
@@ -24,17 +18,15 @@
       unzip
       killall
     ];
-  };
-
-  qt = {
-    enable = true;
-    platformTheme.name = "kvantum";
-    style.name = "kvantum";
+    pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.catppuccin-cursors.mochaDark;
+      name = "catppuccin-mocha-dark-cursors";
+      size = 16;
+    };
   };
 
   programs = {
-    btop.enable = true;
-    fuzzel.enable = true;
     kitty = {
       enable = true;
       settings = {
@@ -42,16 +34,24 @@
       };
     };
     firefox.enable = true;
+    fuzzel.enable = true;
+    btop.enable = true;
   };
 
   imports = [
-    ./modules/programs/codium.nix
-    ./modules/programs/hyprland.nix
-    ./modules/programs/nixcord.nix
-    ./modules/programs/waybar.nix
-    ./modules/services/hyprpaper.nix
-    ./modules/services/gtk.nix
+    ../modules/programs/codium.nix
+    ../modules/programs/hyprland.nix
+    ../modules/programs/nixcord.nix
+    ../modules/programs/waybar.nix
+    ../modules/services/hyprpaper.nix
+    ../modules/services/gtk.nix
   ];
+
+  qt = {
+    enable = true;
+    platformTheme.name = "kvantum";
+    style.name = "kvantum";
+  };
 
   catppuccin = {
     enable = true;

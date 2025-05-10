@@ -10,9 +10,13 @@
   home = {
     username = "yuria";
     homeDirectory = "/home/yuria";
-    btop.enable = true;
-    fuzzel.enable = true;
+    packages = with pkgs; [
+      krita
+      nh
+      prismlauncher
+    ];
   };
+
   programs = {
     git = {
       enable = true;
@@ -20,11 +24,6 @@
       userEmail = "yuria@londor.dev";
     };
   };
-  packages = [
-      krita
-      nh
-      prismlauncher
-  ];
 
   home.stateVersion = "24.11";
 }
