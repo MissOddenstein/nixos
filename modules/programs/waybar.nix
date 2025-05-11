@@ -11,6 +11,7 @@
     style = builtins.readFile ./waybar.css;
     settings = {
       mainBar = {
+        layer = "top";
         position = "top";
         width = 1920;
 
@@ -57,6 +58,8 @@
         };
         "pulseaudio" = {
           scroll-step = 5;
+          on-click = "killall .pavucontrol-wr || kill all .gnome-clocks-wr || killall .gnome-calendar-wr || pavucontrol -t 1";
+          on-click-right = "killall .pavucontrol-wr || kill all .gnome-clocks-wr || killall .gnome-calendar-wr || pavucontrol -t 5";
           format = " {volume}%  {icon} ";
           format-muted = "{volume}%   ";
           format-icons = {
@@ -70,26 +73,15 @@
         "clock" = {
           format = " {:%I:%M  } ";
           timezone = "Australia/Perth";
+          on-click = "killall .pavucontrol-wr || kill all .gnome-clocks-wr || killall .gnome-calendar-wr || gnome-clocks";
           tooltip = true;
           tooltip-format = "{:%A, %B %d, %Y}";
         };
         "clock#calendar" = {
           format = " {:%B %d  } ";
           timezone = "Australia/Perth";
-          tooltip-format = "<tt><small>{calendar}</small></tt>";
-          calendar = {
-            mode = "year";
-            mode-mon-col = 3;
-            weeks-pos = "right";
-            on-scroll = 1;
-            format = {
-              months = "<span color='#f2cdcd'><b>{}</b></span>";
-              days = "<span color='#f5e0dc'><b>{}</b></span>";
-              weeks = "<span color='#fab387'><b>W{}</b></span>";
-              weekdays = "<span color='#ffcc66'><b>{}</b></span>";
-              today = "<span color='#cba6f7'><b><u>{}</u></b></span>";
-            };
-          };
+          on-click = "killall .pavucontrol-wr || kill all .gnome-clocks-wr || killall .gnome-calendar-wr || gnome-calendar";
+          tooltip-format = "{:%A, %B %d, %Y}";
         };
         "custom/power" = {
           format = " I/O   ";

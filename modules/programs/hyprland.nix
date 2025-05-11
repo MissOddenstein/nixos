@@ -11,15 +11,35 @@
     settings = {
       exec-once = "waybar & hyprpaper";
 
-      monitor =  [
+      windowrule = [
+        "move 100%-w-15 -6, title:Volume Control"
+        "size 40% 30%, title:Volume Control"
+        "float, title:Volume Control"
+        "animation slide top, title:Volume Control"
+        "decorate off, title:Volume Control"
+
+        "move 100%-w-15 -10, title:Clocks"
+        "size 40% 30%, title:Clocks"
+        "float, title:Clocks"
+        "animation slide top, title:Clocks"
+        "decorate off, title:Clocks"
+
+        "size 40% 30%, title:Calendar"
+        "move 100%-w-15 130, title:Calendar"
+        "float, title:Calendar"
+        "animation slide top, title:Calendar"
+        "decorate off, title:Calendar"
+      ];
+
+      monitor = [
         "DP-1, 1920x1080@120, auto, 1"
-        "DP-2, 1920x1080@120, auto,1 "
+        "DP-2, 1920x1080@120, auto, 1"
         "DP-3, 1920x1080@120, auto, 1"
       ];
 
       general = {
         "col.active_border" = "rgb(cba6f7)";
-        "col.inactive_border" = "rgb(181825)";
+        "col.inactive_border" = "rgb(11111b)";
 
         gaps_in = 5;
         gaps_out = 15;

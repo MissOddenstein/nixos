@@ -10,19 +10,23 @@
 {
   home = {
     packages = with pkgs; [
+      gnome-clocks
+      gnome-calendar
       xfce.thunar
+      pavucontrol
       hyprshot
       nerdfonts
       fastfetch
       gzip
       unzip
       killall
+      gamescope
     ];
     pointerCursor = {
       gtk.enable = true;
       package = pkgs.catppuccin-cursors.mochaDark;
       name = "catppuccin-mocha-dark-cursors";
-      size = 16;
+      size = 24;
     };
   };
 
