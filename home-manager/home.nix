@@ -23,6 +23,10 @@
       wine
       winetricks
       wlogout
+      mesa
+      libva1
+      ventoy
+      usbutils
     ];
     pointerCursor = {
       gtk.enable = true;

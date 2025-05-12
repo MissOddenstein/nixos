@@ -21,7 +21,7 @@
           userMessagesPronouns.enable = true;
 
           webKeybinds.enable = true;
-          webScreenShareFixes.enable = true;
+          webScreenShareFixes.enable = false;
           ircColors.enable = true;
         };
         themeLinks = [
