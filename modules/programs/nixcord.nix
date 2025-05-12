@@ -25,7 +25,7 @@
           ircColors.enable = true;
         };
         themeLinks = [
-          "https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css"
+          "https://catppuccin.github.io/discord/dist/catppuccin-macchiato.theme.css"
         ];
       };
     };

@@ -12,8 +12,8 @@
       package = pkgs.vscodium;
       userSettings = {
         explorer.confirmDelete = false;
-        catppuccin.accentColor = "mauve";
-        workbench.colorTheme = "Catppuccin Mocha";
+        catppuccin.accentColor = "maroon";
+        workbench.colorTheme = "Catppuccin Macchiato";
         editor.fontFamily = "RobotoMono Nerd Font";
         files.exclude = "";
         git.enableSmartCommit = true;

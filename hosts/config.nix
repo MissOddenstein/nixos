@@ -27,7 +27,6 @@
     users.yuria = {
       isNormalUser = true;
       extraGroups = [
-        "sudo"
         "networkmanager"
         "wheel"
       ];
@@ -84,6 +83,5 @@
     };
   };
 
-  hardware.graphics.enable = true;
-  system.stateVersion = "25.05";
+  system.stateVersion = "24.11";
 }

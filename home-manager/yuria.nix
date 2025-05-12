@@ -13,7 +13,6 @@
     homeDirectory = "/home/yuria";
     packages = with pkgs; [
       krita
-      nh
       prismlauncher
     ];
   };

@@ -23,10 +23,6 @@
       wine
       winetricks
       wlogout
-      mesa
-      libva1
-      ventoy
-      usbutils
     ];
     pointerCursor = {
       gtk.enable = true;
@@ -46,6 +42,7 @@
     firefox.enable = true;
     fuzzel.enable = true;
     btop.enable = true;
+    chromium.enable = true;
   };
 
   imports = [
@@ -65,8 +62,8 @@
 
   catppuccin = {
     enable = true;
-    flavor = "mocha";
-    accent = "mauve";
+    flavor = "macchiato";
+    accent = "maroon";
   };
 
   home.stateVersion = "24.11";

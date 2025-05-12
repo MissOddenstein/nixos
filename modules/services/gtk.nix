@@ -4,10 +4,10 @@
     enable = true;
     theme = {
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "mauve" ];
-        variant = "mocha";
+        accents = [ "maroon" ];
+        variant = "macchiato";
       };
-      name = "catppuccin-mocha-mauve-standard";
+      name = "catppuccin-macchiato-maroon-standard";
     };
     iconTheme = {
       package = pkgs.adwaita-icon-theme;
