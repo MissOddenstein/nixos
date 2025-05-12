@@ -10,7 +10,6 @@
 {
   home = {
     packages = with pkgs; [
-      gnome-clocks
       gnome-calendar
       xfce.thunar
       pavucontrol
@@ -21,12 +20,9 @@
       unzip
       killall
       gamescope
-      catppuccinifier-cli
-      catppuccinifier-gui
-      gamescope
       wine
       winetricks
-      playonlinux
+      wlogout
     ];
     pointerCursor = {
       gtk.enable = true;

@@ -15,11 +15,11 @@
         "tag +widget, title:Volume Control"
         "tag +widget, title:Calendar"
 
-        "move 100%-w-25 -6, title:Volume Control"
-        "size 40% 30%, title:Volume Control"
+        "move 100%-w-15 50, title:Volume Control"
+        "size 700 350, title:Volume Control"
 
-        "move 100%-w-35 130, title:Calendar"
-        "size 40% 30%, title:Calendar"
+        "move 100%-w-15 175, title:Calendar"
+        "size 700px 350px, title:Calendar"
 
         # widgets
         "float, title:Volume Control"

@@ -85,12 +85,8 @@
         };
         "custom/power" = {
           format = " I/O   ";
-          tooltip-format = "
-          Power Menu
-          Left click to Power off
-          Right click to Restart";
-          on-click = "shutdown";
-          on-click-right = "reboot";
+          tooltip-format = "Power Menu";
+          on-click = "wlogout";
         };
       };
     };
