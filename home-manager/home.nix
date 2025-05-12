@@ -21,6 +21,12 @@
       unzip
       killall
       gamescope
+      catppuccinifier-cli
+      catppuccinifier-gui
+      gamescope
+      wine
+      winetricks
+      playonlinux
     ];
     pointerCursor = {
       gtk.enable = true;

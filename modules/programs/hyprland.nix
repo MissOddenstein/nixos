@@ -12,23 +12,25 @@
       exec-once = "waybar & hyprpaper";
 
       windowrule = [
-        "move 100%-w-15 -6, title:Volume Control"
+        "tag +widget, title:Volume Control"
+        "tag +widget, title:Calendar"
+
+        "move 100%-w-25 -6, title:Volume Control"
         "size 40% 30%, title:Volume Control"
+
+        "move 100%-w-35 130, title:Calendar"
+        "size 40% 30%, title:Calendar"
+
+        # widgets
         "float, title:Volume Control"
         "animation slide top, title:Volume Control"
         "decorate off, title:Volume Control"
+        "noinitialfocus, title:Volume Control"
 
-        "move 100%-w-15 -10, title:Clocks"
-        "size 40% 30%, title:Clocks"
-        "float, title:Clocks"
-        "animation slide top, title:Clocks"
-        "decorate off, title:Clocks"
-
-        "size 40% 30%, title:Calendar"
-        "move 100%-w-15 130, title:Calendar"
         "float, title:Calendar"
         "animation slide top, title:Calendar"
         "decorate off, title:Calendar"
+        "noinitialfocus, title:Calendar"
       ];
 
       monitor = [
