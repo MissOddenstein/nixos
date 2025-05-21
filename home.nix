@@ -45,6 +45,7 @@
     fuzzel
     btop
     xfce.thunar
+    nautilus
     hyprshot
     hyprpaper
     hyprpanel
@@ -103,12 +104,6 @@
     ./modules/hyprpanel.nix
     ./modules/spicetify.nix
   ];
-
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "blue";
-  };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

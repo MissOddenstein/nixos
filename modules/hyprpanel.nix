@@ -45,28 +45,13 @@
         bar = {
           transparent = false;
         };
-        name = "catppuccin_mocha";
+        name = "rose_pine_moon";
         font = {
           size = "14px";
         };
       };
       layout = {
         "bar.layouts" = {
-          "0" = {
-            left = [ "dashboard" "workspaces" "windowtitle" "ram" "cpu" ];
-            middle = [ "clock" "weather"];
-            right = [ "systray" "volume" "media" "notifications" "power" ];
-          };
-          "1" = {
-            left = [ "dashboard" "workspaces" "windowtitle" "ram" "cpu" ];
-            middle = [ "clock" "weather"];
-            right = [ "systray" "volume" "media" "notifications" "power" ];
-          };
-          "2" = {
-            left = [ "dashboard" "workspaces" "windowtitle" "ram" "cpu" ];
-            middle = [ "clock" "weather"];
-            right = [ "systray" "volume" "media" "notifications" "power" ];
-          };
         };
       };
     };

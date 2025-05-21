@@ -19,7 +19,7 @@
           ircColors.enable = true;
         };
         themeLinks = [
-          "https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css"
+          ""
         ];
       };
     };

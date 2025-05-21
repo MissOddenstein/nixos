@@ -32,7 +32,7 @@
                 extraSpecialArgs = { inherit inputs; };
             useUserPackages = true;
             users.yuria = import ./home.nix;
-            backupFileExtension = "back";
+            backupFileExtension = "nix-backup";
             };
           }
         ];
