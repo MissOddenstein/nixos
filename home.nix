@@ -103,6 +103,7 @@
     ./modules/hyprpaper.nix
     ./modules/hyprpanel.nix
     ./modules/spicetify.nix
+    ./modules/firefox.nix
   ];
 
   # This value determines the home Manager release that your
