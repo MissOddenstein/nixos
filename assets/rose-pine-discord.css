@@ -6,6 +6,7 @@
     --background-primary: var(--base);
     --background-mobile-primary: var(--base);
     --primary-800: var(--base);
+    --sidebar-color: var(--base);
 
     --button-secondary-background: var(--surface);
     --button-secondary-background-active: color-mix(in srgb, var(--surface) 80%, transparent);
