@@ -52,6 +52,11 @@
       };
       layout = {
         "bar.layouts" = {
+          "*" = {
+            left = ["dashboard" "workspaces" "windowtitle"];
+            middle = ["clock"];
+            right = ["systray" "media" "volume" "notifications" "power"];
+          };
         };
       };
     };

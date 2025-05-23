@@ -4,7 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixcord.url = "github:kaylorben/nixcord";
-    catppuccin.url = "github:catppuccin/nix";
+    nix-colors.url = "github:misterio77/nix-colors";
+    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     hyprpanel.url = "github:MissOddenstein/HyprPanel";
     hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
@@ -14,7 +15,7 @@
     };
   };
 
-  outputs = { nixpkgs, catppuccin, hyprpanel, spicetify-nix, home-manager, self, ... } @ inputs: {
+  outputs = { nixpkgs, hyprpanel, nix-colors, spicetify-nix, home-manager, self, ... } @ inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -27,7 +28,7 @@
                   inputs.hyprpanel.homeManagerModules.hyprpanel
                   inputs.nixcord.homeModules.nixcord
                   inputs.spicetify-nix.homeManagerModules.default
-                  inputs.catppuccin.homeModules.catppuccin
+                  inputs.nix-colors.homeManagerModules.default
                 ];
                 extraSpecialArgs = { inherit inputs; };
             useUserPackages = true;

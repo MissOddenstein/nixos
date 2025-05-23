@@ -15,8 +15,12 @@
       # preload = "/home/yuria/nixos/modules/wall.png";
       # wallpaper = ", /home/yuria/nixos/modules/wall.png";
 
-      preload = "/home/yuria/nixos/modules/moon.jpg";
-      wallpaper = ", /home/yuria/nixos/modules/moon.jpg";
+      # photography by Yidai Song;
+      # I've reframed and graded it to taste,
+      # original can be found here:
+      # https://unsplash.com/photos/pink-flowers-with-green-leaves-on-a-branch-YRzmpwQs3dw
+      preload = "/home/yuria/nixos/modules/6.png";
+      wallpaper = ", /home/yuria/nixos/modules/6.png";
     };
   };
 }
