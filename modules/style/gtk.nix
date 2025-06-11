@@ -11,7 +11,7 @@ in
     enable = true;
     theme = {
       package = "${gtkTheme}";
-      name = "catppuccin-${variant}-pink-standard";
+      name = "catppuccin-${variant}-${toString accents}-standard";
     };
     font = {
       name = "JetBrainsMono Nerd Fonts";

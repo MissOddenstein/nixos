@@ -2,8 +2,9 @@
 {
   wayland.windowManager.hyprland = {
     extraConfig = ''
-      "$mod, S, exec, hyprshot -m region"
-      "$modShift, S, exec, hyprshot -m active -m output"
+      bind = $mod, S, exec, hyprshot -m region
+      bind = $modShift, S, exec, hyprshot -m active -m output
+      env = HYPRSHOT_DIR,Pictures/Screenshots
     '';
   };
 }

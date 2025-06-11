@@ -37,8 +37,11 @@
   home.packages = with pkgs; [
     # here is some command line tools I use frequently
     # feel free to add your own or remove some of them
+    openjdk17
+    obs-studio
+    packwiz
+    kdePackages.ark
     kdePackages.dolphin
-    catppuccinifier-cli
     aseprite
     blockbench
     pulseaudio
