@@ -3,7 +3,10 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+let
+  username = "yuria";
+  hostname = "io";
+in 
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -31,7 +34,7 @@
     };
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "${hostname}"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -95,12 +98,13 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     defaultUserShell = pkgs.fish;
-    users.yuria = {
+    users.${username} = {
       isNormalUser = true;
       description = "Daisy van Dongen";
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [
         bolt-launcher
+        neofetch
       ];
     };
   };
@@ -119,7 +123,7 @@
     steam.enable = true;
     fish = {
       enable = true;
-      interactiveShellInit = "fastfetch";
+      interactiveShellInit = "neofetch";
     };
     hyprland.enable = true;
     firefox.enable = true;
@@ -132,10 +136,14 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
-  ];
+  environment = {
+    variables = {
+      QT_QPA_PLATFORMTHEME = "qt5ct";
+      QT_STYLE_OVERRIDE="kvantum";
+    };
+    systemPackages = with pkgs; [
+    ];
+  };
 
   hardware.graphics.extraPackages = with pkgs; [
     vulkan-loader
