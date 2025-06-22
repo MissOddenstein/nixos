@@ -20,7 +20,6 @@ in
       theme=catppuccin-${variant}-${accent}
     '';
 
-    # TODO: fix this shit holy fuck
     # directory to search for theme
     "Kvantum/catppuccin-${variant}-${accent}".source = "${kvantumTheme}/share/Kvantum/catppuccin-${variant}-${accent}";
   };

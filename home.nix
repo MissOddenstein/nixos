@@ -38,17 +38,25 @@
     # here is some command line tools I use frequently
     # feel free to add your own or remove some of them
     openjdk17
+    dotnetCorePackages.dotnet_8.sdk
     obs-studio
+    instawow
+    wineWowPackages.stable
+    winetricks
+    cmake
+    mpv
+    qbittorrent
     packwiz
     kdePackages.ark
     kdePackages.dolphin
+    kdePackages.kio-fuse
+    kdePackages.kio-extras
     aseprite
     blockbench
     pulseaudio
     prismlauncher
     steam
     unzip
-    fuzzel
     btop
     hyprshot
     hyprpaper
@@ -61,13 +69,11 @@
     tmux
   ];
 
-  # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
     userName = "MissOddenstein";
     userEmail = "yuria@londor.dev";
   };
-
 
   imports = [
     ./modules/hypr/hyprland.nix
@@ -77,6 +83,7 @@
 
     ./modules/programs/nixcord.nix
     ./modules/programs/codium.nix
+    ./modules/programs/fuzzel.nix
     ./modules/programs/spicetify.nix
     ./modules/programs/firefox.nix
 
