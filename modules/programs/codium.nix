@@ -11,6 +11,7 @@
       enable = true;
       package = pkgs.vscodium;
       userSettings = {
+        # theming
         workbench.colorTheme = "Catppuccin Macchiato";
         catppuccin.accentColor = "pink";
 
