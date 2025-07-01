@@ -12,8 +12,11 @@
       package = pkgs.vscodium;
       userSettings = {
         workbench.colorTheme = "Catppuccin Macchiato";
+        catppuccin.accentColor = "pink";
 
         editor.fontFamily = "AdwaitaMono Nerd Font";
+        redhat.telemetry.enabled = true;
+        files.exclude = { "**/.git" = false; };
 
         explorer.confirmDelete = false;
         explorer.confirmDragAndDrop = false;

@@ -2,19 +2,19 @@
   inputs,
   config,
   services,
+  pkgs,
   ...
 }:
 
 {
+  home.packages = [ pkgs.hyprpaper ];
   services.hyprpaper = {
     enable = true;
     settings = {
-      # photography by Zeng Yili;
-      # I've reframed and graded it to taste,
-      # original can be found here:
-      # https://unsplash.com/photos/a-group-of-people-walking-down-a-street-at-night-NL6yz9uSUIU
-      preload = "/home/yuria/nixos/assets/zeng.jpg";
-      wallpaper = ", /home/yuria/nixos/assets/zeng.jpg";
+      # photography by Soham Banerjee
+      # https://unsplash.com/photos/purple-sunset-sky-with-tree-silhouettes-P9Ck7cogn4c
+      preload = "~/nixos/assets/background.jpg";
+      wallpaper = ", ~/nixos/assets/background.jpg";
     };
   };
 }

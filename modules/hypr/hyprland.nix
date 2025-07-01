@@ -10,8 +10,8 @@
     enable = true;
     settings = {
       
-      source = "~/nixos/assets/macchiato.conf";
-      exec-once = "hyprpaper & hyprpanel & hyprpolkitagent";
+      source = "~/nixos/modules/hypr/macchiato.conf";
+      exec-once = "hyprpaper & hyprpanel & hyprlock & hyprpolkitagent & vesktop --start-minimized";
 
       master = {
         new_status = "master";
@@ -38,7 +38,9 @@
       };
 
       windowrule = [
-        "opacity 0.97, fullscreen:0"
+        "opacity 0.95, fullscreen:0"
+        "opacity 0.90, class:kitty"
+        "opacity 1.00, fullscreen:1"
         "float, class:kitty"
       ];
 
@@ -90,6 +92,9 @@
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        
+        # night light
+        "$mod, XF86AudioMute, exec, killall hyprsunset || hyprsunset"
       ];
     };
   };

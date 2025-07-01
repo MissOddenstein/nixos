@@ -1,5 +1,6 @@
-{inputs, config, programs, ...}:
+{inputs, config, programs, pkgs, ...}:
 {
+  home.packages = [ pkgs.hyprshot ];
   wayland.windowManager.hyprland = {
     extraConfig = ''
       bind = $mod, S, exec, hyprshot -m region

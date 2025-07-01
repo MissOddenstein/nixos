@@ -95,7 +95,6 @@ in
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     defaultUserShell = pkgs.fish;
     users.${username} = {
@@ -103,8 +102,10 @@ in
       description = "Daisy van Dongen";
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [
+        killall
         bolt-launcher
-        neofetch
+        fastfetch
+        nerd-fonts.ubuntu
       ];
     };
   };
@@ -123,10 +124,15 @@ in
     steam.enable = true;
     fish = {
       enable = true;
-      interactiveShellInit = "neofetch";
+      interactiveShellInit = "fastfetch";
     };
     hyprland.enable = true;
     firefox.enable = true;
+
+    java = {
+      enable = true;
+      package = pkgs.jdk21.override {enableJavaFX = true; openjfx_jdk = pkgs.openjfx.override {withWebKit = true;};};
+    };
   };
 
   # Allow unfree & unstable packages

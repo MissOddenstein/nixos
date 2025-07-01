@@ -1,28 +1,13 @@
 { inputs, pkgs, config, ... }:
 {
-  home.packages = with pkgs; [
-    wireplumber
-    libgtop
-    bluez
-    bluez-tools
-    networkmanager
-    dart-sass
-    wl-clipboard
-    upower
-    gvfs
-  ];
-
   programs.hyprpanel = {
     enable = true;
-    overlay.enable = true;
-    overwrite.enable = true;
 
     # bar settings
     settings = {
       bar = {
-        launcher = {
-          icon = "";
-        };
+        media.format = "{artist} • {title}";
+        launcher.autoDetectIcon = true;
         workspaces = {
           monitorSpecific = false;
           showAllActive = false;
@@ -38,32 +23,44 @@
           };
           weather.unit = "metric";
         };
-      };
-      menus = {
-        clock.weather = {
-          key = "11c0ad3d6c9f7e7f1f066c8dd2c6db32";
-          location = "Perth";
-          unit = "metric";
-        };
-        dashboard.powermenu.avatar.image = "/home/yuria/nixos/assets/face.png";
-      };
 
-      theme = {
-        bar = {
-          #TODO: add panel scaling
-        };
-        name = "catppuccin_macchiato";
-        font = {
-          size = "16px";
-        };
-      };
-      layout = {
-        "bar.layouts" = {
+
+        layouts = {
           "*" = {
             left = ["dashboard" "workspaces" "ram" "windowtitle"];
             middle = ["clock"];
             right = ["systray" "media" "volume" "notifications" "power"];
           };
+        };
+
+      };
+      menus = {
+        clock.weather = {
+          enabled = false;
+          key = "11c0ad3d6c9f7e7f1f066c8dd2c6db32";
+          location = "Perth";
+          unit = "metric";
+        };
+        dashboard = {
+          powermenu = {
+            avatar.image = "/home/yuria/nixos/assets/face.png";
+            logout = "hyprlock";
+          };
+          shortcuts.enabled = false;
+          stats.enabled = false;
+        };
+      };
+
+      theme = {
+        bar = {
+          opacity = 95;
+          buttons.opacity = 100;
+          menus.opacity = 95;
+        };
+        name = "catppuccin_macchiato";
+        font = {
+          name = "Ubuntu Nerd Font";
+          size = "1.3rem";
         };
       };
     };

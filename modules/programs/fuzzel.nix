@@ -16,6 +16,9 @@
         counter="8087a2ff";
         border="f5bde6ff";
       };
+      border = {
+        width = 2;
+      };
     };
   };
 }

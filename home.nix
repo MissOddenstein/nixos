@@ -4,9 +4,6 @@
 
   # TODO please change the username & home directory to your own
   home = {
-
-
-
     username = "yuria";
     homeDirectory = "/home/yuria";
     enableNixpkgsReleaseCheck = false;
@@ -14,43 +11,28 @@
       gtk.enable = true;
       package = pkgs.catppuccin-cursors.macchiatoDark;
       name = "catppuccin-macchiato-dark-cursors";
-      size = 16;
+      size = 24;
     };
   };
 
-  # link the configuration file in current directory to the specified location in home directory
-  # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
-
-  # link all files in `./scripts` to `~/.config/i3/scripts`
-  # home.file.".config/i3/scripts" = {
-  #   source = ./scripts;
-  #   recursive = true;   # link recursively
-  #   executable = true;  # make all files executable
-  # };
-
-  # encode the file content in nix configuration file directly
-  # home.file.".xxx".text = ''
-  #     xxx
-  # '';
-
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    # here is some command line tools I use frequently
-    # feel free to add your own or remove some of them
-    openjdk17
+    nix-ld
+    docker
+    mame
     dotnetCorePackages.dotnet_8.sdk
     obs-studio
     instawow
     wineWowPackages.stable
     winetricks
     cmake
-    mpv
+    vlc
     qbittorrent
     packwiz
     kdePackages.ark
     kdePackages.dolphin
-    kdePackages.kio-fuse
-    kdePackages.kio-extras
+    kdePackages.gwenview
+    kdePackages.okular
     aseprite
     blockbench
     pulseaudio
@@ -58,15 +40,14 @@
     steam
     unzip
     btop
-    hyprshot
-    hyprpaper
-    hyprpanel
     pavucontrol
     krita
     gparted
     hyprpolkitagent
-    lutris
+    hyprsunset
     tmux
+    nerd-fonts.ubuntu
+    nerd-fonts.ubuntu-mono
   ];
 
   programs.git = {
@@ -80,6 +61,7 @@
     ./modules/hypr/hyprpaper.nix
     ./modules/hypr/hyprpanel.nix
     ./modules/hypr/hyprshot.nix
+    ./modules/hypr/hyprlock.nix
 
     ./modules/programs/nixcord.nix
     ./modules/programs/codium.nix
@@ -91,6 +73,7 @@
     ./modules/style/qt.nix
 
     ./modules/terminal/kitty.nix
+    ./modules/terminal/fastfetch.nix
   ];
 
   # This value determines the home Manager release that your
