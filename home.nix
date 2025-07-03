@@ -67,6 +67,17 @@
     userEmail = "yuria@londor.dev";
   };
 
+  programs.ssh = {
+    enable = true;
+    matchBlocks = {
+      "github.com" = {
+        hostname = "github.com";
+        user = "git";
+        identityFile = "/home/yuria/.ssh/id_github";
+      };
+    };
+  };
+
   imports = [
     ./modules/hypr/hyprland.nix
     ./modules/hypr/hyprpaper.nix
