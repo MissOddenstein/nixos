@@ -6,16 +6,17 @@
 let
   username = "yuria";
   hostname = "io";
-in 
+in
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Enable Flakes
   nix.settings.experimental-features = [
-    "nix-command" "flakes"
+    "nix-command"
+    "flakes"
   ];
 
   # GRUB2 boot loader
@@ -77,7 +78,6 @@ in
   };
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -100,7 +100,10 @@ in
     users.${username} = {
       isNormalUser = true;
       description = "Daisy van Dongen";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
       packages = with pkgs; [
         killall
         bolt-launcher
@@ -131,7 +134,10 @@ in
 
     java = {
       enable = true;
-      package = pkgs.jdk21.override {enableJavaFX = true; openjfx_jdk = pkgs.openjfx.override {withWebKit = true;};};
+      package = pkgs.jdk21.override {
+        enableJavaFX = true;
+        openjfx_jdk = pkgs.openjfx.override { withWebKit = true; };
+      };
     };
   };
 
@@ -145,7 +151,7 @@ in
   environment = {
     variables = {
       QT_QPA_PLATFORMTHEME = "qt5ct";
-      QT_STYLE_OVERRIDE="kvantum";
+      QT_STYLE_OVERRIDE = "kvantum";
     };
     systemPackages = with pkgs; [
     ];

@@ -1,4 +1,9 @@
-{pkgs, inputs, config, ...}:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 {
   programs.hyprlock = {
     enable = true;

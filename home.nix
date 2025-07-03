@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
 
@@ -17,6 +22,9 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    corefonts
+    vistafonts
+    nixfmt-tree
     nix-ld
     docker
     mame
@@ -27,8 +35,11 @@
     winetricks
     cmake
     vlc
+    unzip
+    unrar
     qbittorrent
     packwiz
+    gamescope
     kdePackages.ark
     kdePackages.dolphin
     kdePackages.gwenview

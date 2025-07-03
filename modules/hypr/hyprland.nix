@@ -9,7 +9,7 @@
     xwayland.enable = true;
     enable = true;
     settings = {
-      
+
       source = "~/nixos/modules/hypr/macchiato.conf";
       exec-once = "hyprpaper & hyprpanel & hyprlock & hyprpolkitagent & vesktop --start-minimized";
 
@@ -92,7 +92,7 @@
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        
+
         # night light
         "$mod, XF86AudioMute, exec, killall hyprsunset || hyprsunset"
       ];

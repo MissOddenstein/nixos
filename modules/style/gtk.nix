@@ -1,11 +1,11 @@
 { pkgs, ... }:
-let 
+let
   variant = "macchiato";
-  accents = ["pink"];
+  accents = [ "pink" ];
   gtkTheme = pkgs.catppuccin-gtk.override {
     inherit variant accents;
   };
-in 
+in
 {
   gtk = {
     enable = true;

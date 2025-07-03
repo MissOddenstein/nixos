@@ -1,10 +1,15 @@
-{pkgs, inputs, config, ...}:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 {
   programs.firefox = {
     enable = true;
 
     profiles.yuria = {
-      extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+      extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
         ublock-origin
         firefox-color
         stylus

@@ -10,14 +10,16 @@
     vscode = {
       enable = true;
       package = pkgs.vscodium;
-      userSettings = {
+      profiles.default.userSettings = {
         # theming
         workbench.colorTheme = "Catppuccin Macchiato";
         catppuccin.accentColor = "pink";
 
         editor.fontFamily = "AdwaitaMono Nerd Font";
         redhat.telemetry.enabled = true;
-        files.exclude = { "**/.git" = false; };
+        files.exclude = {
+          "**/.git" = false;
+        };
 
         explorer.confirmDelete = false;
         explorer.confirmDragAndDrop = false;

@@ -1,11 +1,16 @@
-{pkgs, programs, config, ...}:
-let 
+{
+  pkgs,
+  programs,
+  config,
+  ...
+}:
+let
   variant = "macchiato";
   accent = "pink";
   kvantumTheme = pkgs.catppuccin-kvantum.override {
     inherit variant accent;
   };
-in 
+in
 {
   qt = {
     enable = true;
@@ -21,6 +26,7 @@ in
     '';
 
     # directory to search for theme
-    "Kvantum/catppuccin-${variant}-${accent}".source = "${kvantumTheme}/share/Kvantum/catppuccin-${variant}-${accent}";
+    "Kvantum/catppuccin-${variant}-${accent}".source =
+      "${kvantumTheme}/share/Kvantum/catppuccin-${variant}-${accent}";
   };
 }

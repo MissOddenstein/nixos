@@ -1,4 +1,10 @@
-{inputs, config, programs, pkgs, ...}:
+{
+  inputs,
+  config,
+  programs,
+  pkgs,
+  ...
+}:
 {
   home.packages = [ pkgs.hyprshot ];
   wayland.windowManager.hyprland = {

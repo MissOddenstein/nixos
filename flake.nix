@@ -13,27 +13,35 @@
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
   };
 
-  outputs = { nixpkgs, spicetify-nix, home-manager, self, ... } @ inputs: {
-    nixosConfigurations = {
-      io = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              sharedModules = [
-                inputs.nixcord.homeModules.nixcord
-                inputs.spicetify-nix.homeManagerModules.default
-              ];
-            extraSpecialArgs = { inherit inputs; };
-            useUserPackages = true;
-            users.yuria = import ./home.nix;
-            backupFileExtension = "nix-backup";
-            };
-          }
-        ];
+  outputs =
+    {
+      nixpkgs,
+      spicetify-nix,
+      home-manager,
+      self,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations = {
+        io = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                sharedModules = [
+                  inputs.nixcord.homeModules.nixcord
+                  inputs.spicetify-nix.homeManagerModules.default
+                ];
+                extraSpecialArgs = { inherit inputs; };
+                useUserPackages = true;
+                users.yuria = import ./home.nix;
+                backupFileExtension = "nix-backup";
+              };
+            }
+          ];
+        };
       };
     };
-  };
 }

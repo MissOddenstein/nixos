@@ -1,4 +1,9 @@
-{ inputs, pkgs, config, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 {
   programs.hyprpanel = {
     enable = true;
@@ -24,12 +29,22 @@
           weather.unit = "metric";
         };
 
-
         layouts = {
           "*" = {
-            left = ["dashboard" "workspaces" "ram" "windowtitle"];
-            middle = ["clock"];
-            right = ["systray" "media" "volume" "notifications" "power"];
+            left = [
+              "dashboard"
+              "workspaces"
+              "ram"
+              "windowtitle"
+            ];
+            middle = [ "clock" ];
+            right = [
+              "systray"
+              "media"
+              "volume"
+              "notifications"
+              "power"
+            ];
           };
         };
 
