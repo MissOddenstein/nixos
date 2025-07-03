@@ -1,4 +1,3 @@
-hardware-configuration.nix
 var/log/journal
 etc/localtime
 etc/resolv.conf
