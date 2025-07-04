@@ -10,29 +10,32 @@
     vscode = {
       enable = true;
       package = pkgs.vscodium;
-      profiles.default.userSettings = {
-        # theming
-        workbench.colorTheme = "Catppuccin Macchiato";
+      userSettings = {
+
+        workbench = {
+          colorTheme = "Catppuccin Macchiato";
+          iconTheme = "catppuccin-macchiato";
+        };
+
         catppuccin.accentColor = "pink";
 
-        editor.fontFamily = "AdwaitaMono Nerd Font";
-        redhat.telemetry.enabled = true;
+        extensions = with pkgs.vscode-extensions; [
+          redhat.java
+          vscjava.vscode-java-debug
+          vscjava.vscode-java-test
+          vscjava.vscode-maven
+          vscjava.vscode-gradle
+          vscjava.vscode-java-dependency
+          visualstudioexptteam.vscodeintellicode
+          ms-azuretools.vscode-docker
+          catppuccin.catppuccin-vsc
+          catppuccin.catppuccin-vsc-icons
+        ];
+
         files.exclude = {
           "**/.git" = false;
         };
-
-        explorer.confirmDelete = false;
-        explorer.confirmDragAndDrop = false;
-
-        git.enableSmartCommit = true;
-        git.confirmSync = false;
       };
-      extensions = with pkgs.vscode-extensions; [
-        catppuccin.catppuccin-vsc
-        vscjava.vscode-java-pack
-        jnoortheen.nix-ide
-        jeff-hykin.better-nix-syntax
-      ];
     };
   };
 }
