@@ -19,7 +19,6 @@
         };
         clock = {
           format = "%I:%M %p • %a. %B %d";
-          icon = "";
         };
         customModules = {
           ram = {
@@ -33,17 +32,18 @@
           "*" = {
             left = [
               "dashboard"
+              "cputemp"
               "workspaces"
-              "ram"
               "windowtitle"
             ];
             middle = [ "clock" ];
             right = [
               "systray"
-              "media"
               "volume"
+              "bluetooth"
+              "network"
+              "battery"
               "notifications"
-              "power"
             ];
           };
         };
@@ -68,14 +68,14 @@
 
       theme = {
         bar = {
-          opacity = 95;
-          buttons.opacity = 100;
+          opacity = 70;
+          buttons.opacity = 90;
           menus.opacity = 95;
         };
         name = "catppuccin_macchiato";
         font = {
           name = "Ubuntu Nerd Font";
-          size = "1.3rem";
+          size = "1rem";
         };
       };
     };

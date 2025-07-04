@@ -42,6 +42,7 @@
         "opacity 0.90, class:kitty"
         "opacity 1.00, fullscreen:1"
         "float, class:kitty"
+        "size 60% 60%, class:kitty"
       ];
 
       "$mod" = "SUPER";

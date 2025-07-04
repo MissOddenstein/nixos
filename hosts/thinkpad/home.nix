@@ -26,6 +26,8 @@
     vistafonts
     nixfmt-tree
     nix-ld
+    jdk11
+    maven
     docker
     mame
     dotnetCorePackages.dotnet_8.sdk

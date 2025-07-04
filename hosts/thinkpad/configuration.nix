@@ -51,6 +51,10 @@ in
   # Select internationalisation properties.
   i18n.defaultLocale = "en_AU.UTF-8";
 
+  hardware.bluetooth = {
+    enable = true;
+  };
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_AU.UTF-8";
     LC_IDENTIFICATION = "en_AU.UTF-8";
@@ -75,6 +79,14 @@ in
   services.xserver.xkb = {
     layout = "au";
     variant = "";
+  };
+
+  services.upower = {
+    enable = true;
+  };
+
+  services.blueman = {
+    enable = true;
   };
 
   # Enable sound with pipewire.

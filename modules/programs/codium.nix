@@ -29,10 +29,7 @@
       };
       extensions = with pkgs.vscode-extensions; [
         catppuccin.catppuccin-vsc
-
-        redhat.java
-        vscjava.vscode-gradle
-
+        vscjava.vscode-java-pack
         jnoortheen.nix-ide
         jeff-hykin.better-nix-syntax
       ];
